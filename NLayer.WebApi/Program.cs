@@ -11,6 +11,7 @@ using NLayer.Service.Mapping;
 using NLayer.Service.Services;
 using NLayer.Service.Validations;
 using NLayer.WebApi.Filters;
+using NLayer.WebApi.Middlewares;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -59,7 +60,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseCustomException();
 app.UseAuthorization();
 
 app.MapControllers();
