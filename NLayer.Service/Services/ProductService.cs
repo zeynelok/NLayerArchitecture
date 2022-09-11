@@ -16,11 +16,10 @@ namespace NLayer.Service.Services
     {
         private readonly IProductRepository _productRepository;
         private readonly IMapper _mapper;
-        public ProductService(IGenericRepository<Product> genericRepository, IUnitOfWork unitOfWork, IProductRepository productRepository,IMapper mapper) : base(genericRepository, unitOfWork)
+        public ProductService(IGenericRepository<Product> repository, IUnitOfWork unitOfWork, IMapper mapper, IProductRepository productRepository) : base(repository, unitOfWork)
         {
-
-            _productRepository = productRepository;
             _mapper = mapper;
+            _productRepository = productRepository;
         }
 
         public async Task<List<ProductWithCategoryDto>> GetProductsWithCategory()

@@ -12,15 +12,16 @@ namespace NLayer.Web.Controllers
         private readonly IProductService _productService;
         private readonly ICategoryService _categoryService;
         private readonly IMapper _mapper;
-        public ProductsController(IProductService productService, ICategoryService categoryService, IMapper mapper)
+        public ProductsController(IProductService services, ICategoryService categoryService, IMapper mapper)
         {
-            _productService = productService;
+            _productService = services;
             _categoryService = categoryService;
             _mapper = mapper;
         }
         public async Task<IActionResult> ProductIndex()
         {
-            return View(await _productService.GetProductsWithCategory());
+            var x = await _productService.GetProductsWithCategory();
+            return View(x);
         }
 
         public async Task<IActionResult> Save()
