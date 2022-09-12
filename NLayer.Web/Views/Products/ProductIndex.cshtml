@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "ProductIndex";
 }
 
@@ -8,32 +7,39 @@
 
 <table class="table table-strped">
 
-	<thead>
-		<tr>
-			<td>Id</td>
-			<td>Name</td>
-			<td>Price</td>
-			<td>Stock</td>
-			<td>Category</td>
-			<td>CreatedDate</td>
-		</tr>
-	</thead>
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Price</td>
+            <td>Stock</td>
+            <td>Category</td>
+            <td>CreatedDate</td>
+            <td>Actions</td>
 
-	<tbody>
-		@foreach (var item in Model)
-		{
-			<tr>
-				<td>@item.Id</td>
-				<td>@item.Name</td>
-				<td>@item.Price</td>
-				<td>@item.Stock</td>
-				<td>@item.Category.Name</td>
-				<td>@item.CreatedDate</td>
-			</tr>
+        </tr>
+    </thead>
 
-		}
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.Price</td>
+                <td>@item.Stock</td>
+                <td>@item.Category.Name</td>
+                <td>@item.CreatedDate</td>
+                <td>
+                    <a  class="btn btn-warning"  asp-controller="Products" asp-action="Update" asp-route-id="@item.Id">Update</a>
+                    <a  class="btn btn-danger"  asp-controller="Products" asp-action="Remove" asp-route-id="@item.Id">Delete</a>
+                    
+                </td>
+            </tr>
 
-	</tbody>
+        }
+
+    </tbody>
 
 </table>
 
