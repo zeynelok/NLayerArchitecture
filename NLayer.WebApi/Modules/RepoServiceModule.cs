@@ -35,7 +35,7 @@ namespace NLayer.WebApi.Modules
                .AsImplementedInterfaces()
                .InstancePerLifetimeScope();
 
-            builder.RegisterType<ProductServiceWithCaching>().As<IProductService>();
+          //  builder.RegisterType<ProductServiceWithCaching>().As<IProductService>();
 
             base.Load(builder);
         }
