@@ -49,6 +49,8 @@ namespace NLayer.Web.Controllers
             return View();
         }
 
+
+        [ServiceFilter(typeof(NotFoundFilter<Product>))]
         public async Task<IActionResult> Update(int id)
         {
             var product = await _productService.GetByIdAsync(id);
