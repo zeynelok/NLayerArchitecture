@@ -2,9 +2,9 @@
     ViewData["Title"] = "ProductIndex";
 }
 
-@model CustomResponseDto<List<ProductWithCategoryDto>>
+@model List<ProductWithCategoryDto>
 
-
+    <a class="btn btn-primary" asp-controller="Products" asp-action="Save">Save Product</a>
 <table class="table table-strped">
 
     <thead>
@@ -21,7 +21,7 @@
     </thead>
 
     <tbody>
-        @foreach (var item in Model.Data)
+        @foreach (var item in Model)
         {
             <tr>
                 <td>@item.Id</td>
