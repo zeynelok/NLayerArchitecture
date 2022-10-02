@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace NLayer.Repository.Repositories
 {
-    public class CategoryRespository : GenericRepository<Category>, ICategoryRepository
+    public class CategoryRepository : GenericRepository<Category>, ICategoryRepository
     {
-        public CategoryRespository(AppDbContext context) : base(context)
+        public CategoryRepository(AppDbContext context) : base(context)
         {
         }
 
